@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prompts Studio Photo Pro ? Ultra-Stable</title>
+    <meta name="description" content="G?n?rateur de prompts photo produit ultra-stables (1:1) ? iPhone 15 Pro." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="container header">
+      <div class="brand">
+        <div class="logo">??</div>
+        <div>
+          <h1>Prompts Studio Photo Pro</h1>
+          <p class="subtitle">Version ultra-stable ? S?rie 1:1 (iPhone 15 Pro)</p>
+        </div>
+      </div>
+      <nav class="actions">
+        <button id="copyAll" class="btn primary">Copier tout</button>
+        <button id="reset" class="btn">R?initialiser</button>
+      </nav>
+    </header>
+
+    <main class="container grid">
+      <section class="card">
+        <h2>Param?tres produit</h2>
+        <form id="productForm" class="form">
+          <div class="field">
+            <label for="title">Nom du produit</label>
+            <input id="title" type="text" placeholder="Ex. Montre en acier bross?" required />
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="brand">Marque</label>
+              <input id="brand" type="text" placeholder="Ex. Aster" />
+            </div>
+            <div class="field">
+              <label for="model">Mod?le / R?f?rence</label>
+              <input id="model" type="text" placeholder="Ex. S-42" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="color">Couleur(s)</label>
+              <input id="color" type="text" placeholder="Ex. acier argent, noir profond" />
+            </div>
+            <div class="field">
+              <label for="material">Mat?riaux</label>
+              <input id="material" type="text" placeholder="Ex. acier bross?, verre saphir" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="texture">Texture / D?tails (grain, fibre, couture, gravure)</label>
+            <input id="texture" type="text" placeholder="Ex. brossage radial fin, gravure laser sur lunette" />
+          </div>
+          <div class="field">
+            <label for="inscriptions">Inscriptions / Texte exact ? respecter</label>
+            <input id="inscriptions" type="text" placeholder="Ex. ASTER S-42, 10 ATM, SWISS" />
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="dimensions">Dimensions (L ? l ? H, mm)</label>
+              <input id="dimensions" type="text" placeholder="Ex. 42 ? 42 ? 10 mm" />
+            </div>
+            <div class="field">
+              <label for="weight">Poids</label>
+              <input id="weight" type="text" placeholder="Ex. 120 g" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="scaleObjects">Objets d'?chelle</label>
+              <input id="scaleObjects" type="text" placeholder="Ex. tasse, main, livre, pi?ce" />
+            </div>
+            <div class="field">
+              <label for="interiorStyle">Style int?rieur (mise en situation)</label>
+              <input id="interiorStyle" type="text" placeholder="Ex. minimalisme scandinave, bois clair, lin naturel" />
+            </div>
+          </div>
+
+          <div class="note">
+            Tous les prompts imposent: carr? 1:1, simulation iPhone 15 Pro, lumi?re naturelle douce uniforme, ombres l?g?res coh?rentes, rendu photor?aliste propre.
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn primary">G?n?rer les 4 prompts</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card outputs">
+        <h2>Prompts</h2>
+        <div id="outputs" class="outputs-list">
+          <article class="prompt">
+            <header class="prompt-header">
+              <h3>1) Photo principale ? carr? 1:1</h3>
+              <button class="btn small" data-copy="#out1">Copier</button>
+            </header>
+            <textarea id="out1" readonly rows="10"></textarea>
+          </article>
+
+          <article class="prompt">
+            <header class="prompt-header">
+              <h3>2) D?tail macro ? carr? 1:1</h3>
+              <button class="btn small" data-copy="#out2">Copier</button>
+            </header>
+            <textarea id="out2" readonly rows="10"></textarea>
+          </article>
+
+          <article class="prompt">
+            <header class="prompt-header">
+              <h3>3) Photo d'?chelle ? carr? 1:1</h3>
+              <button class="btn small" data-copy="#out3">Copier</button>
+            </header>
+            <textarea id="out3" readonly rows="10"></textarea>
+          </article>
+
+          <article class="prompt">
+            <header class="prompt-header">
+              <h3>4) Mise en situation ? carr? 1:1</h3>
+              <button class="btn small" data-copy="#out4">Copier</button>
+            </header>
+            <textarea id="out4" readonly rows="10"></textarea>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <span>? Prompts Studio Photo Pro ? Ultra-Stable</span>
+      <a href="https://vercel.com" target="_blank" rel="noopener">D?ploy? sur Vercel</a>
+    </footer>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
